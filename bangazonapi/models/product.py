@@ -8,6 +8,6 @@ class Product(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=280)
     quantity = models.IntegerField()
-    price = models.DecimalField(max_length = 7, decimal_places=2)
+    price = models.DecimalField(max_digits=7, decimal_places=2)
     category_id = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default="None")
     date_added = models.DateField(auto_now_add=True)
