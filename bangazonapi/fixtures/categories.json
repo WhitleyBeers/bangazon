@@ -1,0 +1,23 @@
+[
+    {
+        "model": "bangazonapi.category",
+        "pk": 1,
+        "fields": {
+            "label": "Decor"
+        }
+    },
+    {
+        "model": "bangazonapi.category",
+        "pk": 2,
+        "fields": {
+            "label": "Electronics"
+        }
+    },
+    {
+        "model": "bangazonapi.category",
+        "pk": 3,
+        "fields": {
+            "label": "Clothes"
+        }
+    }
+]
