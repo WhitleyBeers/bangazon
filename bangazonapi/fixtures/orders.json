@@ -1,0 +1,32 @@
+[
+    {
+        "model": "bangazonapi.order",
+        "pk": 1,
+        "fields": {
+            "customer_id": 2,
+            "completed": false,
+            "payment_method": "Credit",
+            "shipped": false
+        }
+    },
+    {
+      "model": "bangazonapi.order",
+      "pk": 2,
+      "fields": {
+            "customer_id": 1,
+            "completed": true,
+            "payment_method": "Debit",
+            "shipped": true
+        }
+    },
+    {
+      "model": "bangazonapi.order",
+      "pk": 3,
+      "fields": {
+            "customer_id": 2,
+            "completed": false,
+            "payment_method": "Gift card",
+            "shipped": true
+        }
+    }
+]
