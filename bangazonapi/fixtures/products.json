@@ -1,0 +1,41 @@
+[
+    {
+        "model": "bangazonapi.product",
+        "pk": 1,
+        "fields": {
+            "seller_id": 3,
+            "title": "My product",
+            "description": "This is a thing.",
+            "quantity": 10,
+            "price": 7.99,
+            "category_id": 2,
+            "date_added": "2023-07-17"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 2,
+        "fields": {
+            "seller_id": 2,
+            "title": "A product",
+            "description": "This is another thing.",
+            "quantity": 7,
+            "price": 52.00,
+            "category_id": 1,
+            "date_added": "2023-07-17"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 3,
+        "fields": {
+            "seller_id": 2,
+            "title": "A thing",
+            "description": "This is a different thing.",
+            "quantity": 55,
+            "price": 6.93,
+            "category_id": 3,
+            "date_added": "2023-07-17"
+        }
+    }
+]
