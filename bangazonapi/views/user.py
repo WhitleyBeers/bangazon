@@ -2,7 +2,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
-from bangazonapi.serializers import UserSerializer
+from bangazonapi.serializers import UserSerializer, CreateUserSerializer
 from bangazonapi.models import User
 
 class UserView(ViewSet):
@@ -24,11 +24,24 @@ class UserView(ViewSet):
       
     def create(self, request):
         """POST request to create a user"""
-        pass
+        uid = request.META["HTTP_AUTHORIZATION"]
+        serializer = CreateUserSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save(uid=uid)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
         
     def update(self, request, pk):
         """PUT request to update a user"""
-        pass
+        user = User.objects.get(pk=pk)
+        uid = request.META["HTTP_AUTHORIZATION"]
+        user.first_name = request.data['firstName']
+        user.last_name = request.data['lastName']
+        user.email = request.data['email']
+        user.profile_image_url = request.data['profileImageUrl']
+        user.username = request.data['username']
+        user.uid = uid
+        user.save()
+        return Response({'message': 'User updated'}, status=status.HTTP_204_NO_CONTENT)
       
     def destroy(self, request, pk):
         """DELETE request to destroy a user"""

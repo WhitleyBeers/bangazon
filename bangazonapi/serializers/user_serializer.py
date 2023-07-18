@@ -14,3 +14,15 @@ class UserSerializer(serializers.ModelSerializer):
                   'registered_on',
                   'profile_image_url',
                   'username')
+        
+
+class CreateUserSerializer(serializers.ModelSerializer):
+    """json serializer for creating users"""
+    class Meta:
+        model = User
+        fields = ('id',
+                  'first_name',
+                  'last_name',
+                  'email',
+                  'profile_image_url',
+                  'username')
