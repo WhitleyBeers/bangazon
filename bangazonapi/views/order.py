@@ -37,7 +37,12 @@ class OrderView(ViewSet):
       
     def update(self, request, pk):
         """PUT request to update an order"""
-        pass
+        order = Order.objects.get(pk=pk)
+        order.completed = request.data['completed']
+        order.payment_method = request.data['paymentMethod']
+        order.shipped = request.data['shipped']
+        order.save()
+        return Response({'message': 'Order updated'}, status=status.HTTP_204_NO_CONTENT)
       
     def destroy(self, request, pk):
         """DELETE request to destroy an order"""
