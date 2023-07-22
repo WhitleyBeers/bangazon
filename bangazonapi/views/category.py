@@ -20,4 +20,6 @@ class CategoryView(ViewSet):
       
     def list(self, request):
         """GET request for a list of categories"""
-        pass
+        categories = Category.objects.all()
+        serializer = CategorySerializer(categories, many=True)
+        return Response(serializer.data)
