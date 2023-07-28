@@ -30,7 +30,6 @@ class OrderView(ViewSet):
         user = User.objects.get(pk=request.META["HTTP_AUTHORIZATION"])
         order = Order.objects.create(
             customer_id = user,
-            payment_method = request.data['paymentMethod']
         )
         serializer = OrderSerializer(order)
         return Response(serializer.data)
