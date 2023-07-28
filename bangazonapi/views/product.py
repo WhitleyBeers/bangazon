@@ -20,5 +20,8 @@ class ProductView(ViewSet):
     def list(self, request):
         """GET request for a list of products"""
         products = Product.objects.all()
+        seller = request.query_params.get('seller', None)
+        if seller is not None:
+            products = products.filter(seller_id = seller)
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)

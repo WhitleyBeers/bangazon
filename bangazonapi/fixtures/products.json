@@ -37,5 +37,253 @@
             "category_id": 3,
             "date_added": "2023-07-17"
         }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 4,
+        "fields": {
+            "seller_id": 7,
+            "title": "Book",
+            "description": "Book for sale",
+            "quantity": 13,
+            "price": 14.99,
+            "category_id": 1,
+            "date_added": "2023-07-19"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 5,
+        "fields": {
+            "seller_id": 7,
+            "title": "Video game",
+            "description": "Video game for sale",
+            "quantity": 55,
+            "price": 59.99,
+            "category_id": 3,
+            "date_added": "2023-07-12"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 6,
+        "fields": {
+            "seller_id": 7,
+            "title": "Board game",
+            "description": "Board game for sale",
+            "quantity": 47,
+            "price": 32.97,
+            "category_id": 2,
+            "date_added": "2023-07-24"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 7,
+        "fields": {
+            "seller_id": 9,
+            "title": "Dog collar",
+            "description": "Dog collar for sale",
+            "quantity": 14,
+            "price": 8.99,
+            "category_id": 3,
+            "date_added": "2023-06-03"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 8,
+        "fields": {
+            "seller_id": 9,
+            "title": "Cereal",
+            "description": "Cereal killer, killer cereal",
+            "quantity": 36,
+            "price": 3.50,
+            "category_id": 2,
+            "date_added": "2023-03-26"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 9,
+        "fields": {
+            "seller_id": 9,
+            "title": "Ibuprofen",
+            "description": "Ow my head",
+            "quantity": 568,
+            "price": 5.26,
+            "category_id": 1,
+            "date_added": "2023-07-25"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 10,
+        "fields": {
+            "seller_id": 7,
+            "title": "nail polish",
+            "description": "smells funny",
+            "quantity": 623,
+            "price": 2.32,
+            "category_id": 2,
+            "date_added": "2023-07-25"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 11,
+        "fields": {
+            "seller_id": 9,
+            "title": "pop",
+            "description": "not soda",
+            "quantity": 25,
+            "price": 7.00,
+            "category_id": 3,
+            "date_added": "2023-04-25"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 12,
+        "fields": {
+            "seller_id": 11,
+            "title": "lawn mower",
+            "description": "mows my lawn",
+            "quantity": 4,
+            "price": 129.99,
+            "category_id": 2,
+            "date_added": "2023-06-06"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 13,
+        "fields": {
+            "seller_id": 11,
+            "title": "weed whacker",
+            "description": "whacks my weeds",
+            "quantity": 36,
+            "price": 63.76,
+            "category_id": 1,
+            "date_added": "2023-02-28"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 14,
+        "fields": {
+            "seller_id": 11,
+            "title": "phone case",
+            "description": "keeps me from breaking my phone",
+            "quantity": 735,
+            "price": 2.56,
+            "category_id": 2,
+            "date_added": "2023-07-21"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 15,
+        "fields": {
+            "seller_id": 2,
+            "title": "scratch post",
+            "description": "a post to scratch",
+            "quantity": 22,
+            "price": 40.00,
+            "category_id": 3,
+            "date_added": "2023-03-17"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 16,
+        "fields": {
+            "seller_id": 2,
+            "title": "mouse toy",
+            "description": "with catnip",
+            "quantity": 636,
+            "price": 5.75,
+            "category_id": 1,
+            "date_added": "2023-07-05"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 17,
+        "fields": {
+            "seller_id": 7,
+            "title": "back pain",
+            "description": "for those 30 and older",
+            "quantity": 666,
+            "price": 0.00,
+            "category_id": 1,
+            "date_added": "2023-02-17"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 18,
+        "fields": {
+            "seller_id": 9,
+            "title": "highlighters",
+            "description": "light your highs",
+            "quantity": 235,
+            "price": 1.85,
+            "category_id": 2,
+            "date_added": "2023-05-08"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 19,
+        "fields": {
+            "seller_id": 7,
+            "title": "glasses",
+            "description": "i can't see",
+            "quantity": 2,
+            "price": 7.37,
+            "category_id": 2,
+            "date_added": "2023-06-08"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 20,
+        "fields": {
+            "seller_id": 1,
+            "title": "cup",
+            "description": "for your water",
+            "quantity": 457,
+            "price": 3.06,
+            "category_id": 3,
+            "date_added": "2023-03-15"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 21,
+        "fields": {
+            "seller_id": 9,
+            "title": "chewy dipped granola bar",
+            "description": "the title is pretty self explanatory",
+            "quantity": 12,
+            "price": 4.98,
+            "category_id": 3,
+            "date_added": "2023-07-20"
+        }
+    },
+    {
+        "model": "bangazonapi.product",
+        "pk": 22,
+        "fields": {
+            "seller_id": 11,
+            "title": "sharpie",
+            "description": "write some stuff in bold font",
+            "quantity": 62,
+            "price": 2.99,
+            "category_id": 1,
+            "date_added": "2023-07-12"
+        }
     }
+    
 ]
