@@ -9,5 +9,5 @@ class Product(models.Model):
     description = models.CharField(max_length=280)
     quantity = models.IntegerField()
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    category_id = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default="None")
+    category_id = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default="None", related_name='products')
     date_added = models.DateField(auto_now_add=True)
