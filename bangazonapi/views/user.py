@@ -50,6 +50,7 @@ class UserView(ViewSet):
         user.delete()
         return Response({'message': 'User deleted'}, status=status.HTTP_204_NO_CONTENT)
 
+    # GETS OPEN ORDER BY USER
     @action(methods=['get'], detail=True)
     def getorder(self, request, pk):
         """request to find user's open order"""

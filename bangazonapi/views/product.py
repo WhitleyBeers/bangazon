@@ -38,3 +38,15 @@ class ProductView(ViewSet):
             product_id = product
         )
         return Response({'message': 'Added to cart'}, status=status.HTTP_201_CREATED)
+    
+    @action(methods=['delete'], detail=True)
+    def deletefromcart(self, request, pk):
+        """delete request for orderproducts"""
+        order = Order.objects.get(id = request.data["orderId"])
+        product = Product.objects.get(pk=pk)
+        order_product = OrderProduct.objects.get(
+            order_id = order,
+            product_id = product
+        )
+        order_product.delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
