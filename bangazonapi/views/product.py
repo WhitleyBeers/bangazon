@@ -27,6 +27,7 @@ class ProductView(ViewSet):
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
     
+    # ADD ITEM TO CART
     @action(methods=['post'], detail=True)
     def addtocart(self, request, pk):
         """post request to add item to cart"""
@@ -39,6 +40,7 @@ class ProductView(ViewSet):
         )
         return Response({'message': 'Added to cart'}, status=status.HTTP_201_CREATED)
     
+    # DELETES ITEM FROM CART
     @action(methods=['delete'], detail=True)
     def deletefromcart(self, request, pk):
         """delete request for orderproducts"""
