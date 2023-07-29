@@ -44,11 +44,11 @@ class ProductView(ViewSet):
     @action(methods=['delete'], detail=True)
     def deletefromcart(self, request, pk):
         """delete request for orderproducts"""
-        order = Order.objects.get(id = request.data["orderId"])
+        order = Order.objects.get(id = request.META["HTTP_AUTHORIZATION"])
         product = Product.objects.get(pk=pk)
         order_product = OrderProduct.objects.get(
             order_id = order,
             product_id = product
         )
         order_product.delete()
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
+        return Response({'message': 'Removed from cart'}, status=status.HTTP_204_NO_CONTENT)
