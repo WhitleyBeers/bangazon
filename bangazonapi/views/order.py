@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from bangazonapi.serializers import OrderSerializer, UserSerializer
 from bangazonapi.models import Order, User
-
+from rest_framework.decorators import action
 
 class OrderView(ViewSet):
     """Bangazon Orders"""
@@ -48,3 +48,4 @@ class OrderView(ViewSet):
         order = Order.objects.get(pk=pk)
         order.delete()
         return Response({'message': 'Order deleted'}, status=status.HTTP_204_NO_CONTENT)
+    
