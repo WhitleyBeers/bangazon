@@ -21,7 +21,7 @@ class OrderView(ViewSet):
         """GET request for a list of orders"""
         orders = Order.objects.all()
         user = request.META["HTTP_AUTHORIZATION"]
-        orders = orders.filter(customer_id = user)
+        orders = orders.filter(customer_id = user, completed=True)
         serializer = OrderSerializer(orders, many=True)
         return Response(serializer.data)
     
