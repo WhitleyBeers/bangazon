@@ -4,7 +4,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from bangazonapi.serializers import OrderSerializer, UserSerializer
 from bangazonapi.models import Order, User
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view
+from django.db.models import Q
 
 class OrderView(ViewSet):
     """Bangazon Orders"""
@@ -49,3 +50,11 @@ class OrderView(ViewSet):
         order.delete()
         return Response({'message': 'Order deleted'}, status=status.HTTP_204_NO_CONTENT)
     
+    @api_view(['GET'])
+    def seller_order_history(request):
+        target_seller_id = request.META["HTTP_AUTHORIZATION"]
+        orders_with_products_from_seller = Order.objects.filter(
+            order_products__product_id__seller_id = target_seller_id
+        ).distinct()
+        serializer = OrderSerializer(orders_with_products_from_seller, many=True)
+        return Response(serializer.data)
