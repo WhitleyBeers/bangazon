@@ -2,8 +2,9 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
-from bangazonapi.serializers import UserSerializer, CreateUserSerializer
-from bangazonapi.models import User
+from bangazonapi.serializers import UserSerializer, CreateUserSerializer, OrderSerializer
+from bangazonapi.models import User, Order
+from rest_framework.decorators import action
 
 class UserView(ViewSet):
     """Bangazon API Users"""
@@ -48,3 +49,17 @@ class UserView(ViewSet):
         user = User.objects.get(pk=pk)
         user.delete()
         return Response({'message': 'User deleted'}, status=status.HTTP_204_NO_CONTENT)
+
+    # GETS OPEN ORDER BY USER
+    @action(methods=['get'], detail=True)
+    def getorder(self, request, pk):
+        """request to find user's open order"""
+        try:
+            order = Order.objects.get(
+                customer_id = pk,
+                completed = False
+            )
+            serializer = OrderSerializer(order)
+            return Response(serializer.data)
+        except Order.DoesNotExist:
+            return Response(False)

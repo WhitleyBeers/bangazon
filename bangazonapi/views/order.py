@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from bangazonapi.serializers import OrderSerializer, UserSerializer
 from bangazonapi.models import Order, User
-
+from rest_framework.decorators import action
 
 class OrderView(ViewSet):
     """Bangazon Orders"""
@@ -27,7 +27,7 @@ class OrderView(ViewSet):
     
     def create(self, request):
         """POST request to create an order"""
-        user = User.objects.get(pk=request.META["HTTP_AUTHORIZATION"])
+        user = User.objects.get(id=request.META["HTTP_AUTHORIZATION"])
         order = Order.objects.create(
             customer_id = user,
         )
@@ -37,9 +37,9 @@ class OrderView(ViewSet):
     def update(self, request, pk):
         """PUT request to update an order"""
         order = Order.objects.get(pk=pk)
-        order.completed = request.data['completed']
+        order.completed = True
         order.payment_method = request.data['paymentMethod']
-        order.shipped = request.data['shipped']
+        order.shipped = True
         order.save()
         return Response({'message': 'Order updated'}, status=status.HTTP_204_NO_CONTENT)
       
@@ -48,3 +48,4 @@ class OrderView(ViewSet):
         order = Order.objects.get(pk=pk)
         order.delete()
         return Response({'message': 'Order deleted'}, status=status.HTTP_204_NO_CONTENT)
+    
